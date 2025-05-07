@@ -1,15 +1,17 @@
 
 import { Instagram, Linkedin, Youtube } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   const links = [
-    { title: 'Início', href: '#inicio' },
-    { title: 'Sobre', href: '#sobre' },
-    { title: 'O que fazemos', href: '#oque-fazemos' },
-    { title: 'Como fazemos', href: '#como-fazemos' },
-    { title: 'Contato', href: '#contato' },
+    { title: 'Início', href: '#inicio', isHash: true },
+    { title: 'Sobre', href: '#sobre', isHash: true },
+    { title: 'O que fazemos', href: '#oque-fazemos', isHash: true },
+    { title: 'Como fazemos', href: '#como-fazemos', isHash: true },
+    { title: 'Grupo de Estudos', href: '/grupo-estudos', isHash: false },
+    { title: 'Contato', href: '#contato', isHash: true },
   ];
 
   return (
@@ -41,9 +43,21 @@ const Footer = () => {
             <ul className="space-y-2">
               {links.map((link) => (
                 <li key={link.title}>
-                  <a href={link.href} className="text-gray-400 hover:text-primary transition-colors">
-                    {link.title}
-                  </a>
+                  {link.isHash ? (
+                    <a 
+                      href={link.href} 
+                      className="text-gray-400 hover:text-primary transition-colors"
+                    >
+                      {link.title}
+                    </a>
+                  ) : (
+                    <Link 
+                      to={link.href} 
+                      className="text-gray-400 hover:text-primary transition-colors"
+                    >
+                      {link.title}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

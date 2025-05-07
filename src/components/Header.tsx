@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,11 +41,12 @@ const Header = () => {
   }, [isMenuOpen]);
 
   const menuItems = [
-    { name: 'Início', href: '#inicio' },
-    { name: 'Sobre', href: '#sobre' },
-    { name: 'O que fazemos', href: '#oque-fazemos' },
-    { name: 'Como fazemos', href: '#como-fazemos' },
-    { name: 'Contato', href: '#contato' }
+    { name: 'Início', href: '/#inicio', isHash: true },
+    { name: 'Sobre', href: '/#sobre', isHash: true },
+    { name: 'O que fazemos', href: '/#oque-fazemos', isHash: true },
+    { name: 'Como fazemos', href: '/#como-fazemos', isHash: true },
+    { name: 'Grupo de Estudos', href: '/grupo-estudos', isHash: false },
+    { name: 'Contato', href: '/#contato', isHash: true }
   ];
 
   return (
@@ -57,7 +59,7 @@ const Header = () => {
       )}
     >
       <div className="container flex justify-between items-center">
-        <a href="#inicio" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <img 
             src="/lovable-uploads/8d6f81a7-2dae-45aa-9aef-02025c513329.png"
             alt="Logo Instituto Escafandristas" 
@@ -67,18 +69,28 @@ const Header = () => {
             <span className="text-lg font-serif font-bold text-primary-dark">Instituto</span>
             <span className="text-lg font-serif font-bold text-primary-dark">Escafandristas</span>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           {menuItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="text-gray-700 hover:text-primary transition-colors font-medium"
-            >
-              {item.name}
-            </a>
+            item.isHash ? (
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-gray-700 hover:text-primary transition-colors font-medium"
+              >
+                {item.name}
+              </a>
+            ) : (
+              <Link
+                key={item.name}
+                to={item.href}
+                className="text-gray-700 hover:text-primary transition-colors font-medium"
+              >
+                {item.name}
+              </Link>
+            )
           ))}
         </nav>
 
@@ -113,14 +125,25 @@ const Header = () => {
           </div>
           <nav className="flex flex-col items-center space-y-6 pt-12">
             {menuItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-xl text-gray-800 hover:text-primary font-medium"
-                onClick={toggleMenu}
-              >
-                {item.name}
-              </a>
+              item.isHash ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-xl text-gray-800 hover:text-primary font-medium"
+                  onClick={toggleMenu}
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="text-xl text-gray-800 hover:text-primary font-medium"
+                  onClick={toggleMenu}
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
           </nav>
         </div>

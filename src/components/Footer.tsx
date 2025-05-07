@@ -1,108 +1,85 @@
 
-import { Facebook, Instagram, Linkedin, Twitter, Calendar, FileText, Calculator, Phone, Mail, MapPin } from 'lucide-react';
+import { Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
+  const links = [
+    { title: 'Início', href: '#inicio' },
+    { title: 'Sobre', href: '#sobre' },
+    { title: 'O que fazemos', href: '#oque-fazemos' },
+    { title: 'Como fazemos', href: '#como-fazemos' },
+    { title: 'Contato', href: '#contato' },
+  ];
+
   return (
     <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-xl font-bold mb-4">Contabilify</h3>
-            <p className="text-gray-400 mb-6">
-              Soluções contábeis completas para empresas de todos os portes, com foco em qualidade e resultados.
+      <div className="container py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="md:col-span-2">
+            <div className="flex items-center gap-3 mb-4">
+              <img 
+                src="/lovable-uploads/8d6f81a7-2dae-45aa-9aef-02025c513329.png"
+                alt="Logo Instituto Escafandristas" 
+                className="h-12 w-auto"
+              />
+              <div>
+                <h3 className="text-xl font-serif font-bold">Instituto<br/>Escafandristas</h3>
+              </div>
+            </div>
+            <p className="text-gray-400 mb-6 max-w-md">
+              Uma organização sem fins lucrativos dedicada à formação da próxima geração de 
+              intelectuais liberais no Brasil.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+            <p className="text-primary text-lg font-serif italic">
+              Ouse saber.
+            </p>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-bold mb-4">Links Rápidos</h3>
+            <ul className="space-y-2">
+              {links.map((link) => (
+                <li key={link.title}>
+                  <a href={link.href} className="text-gray-400 hover:text-primary transition-colors">
+                    {link.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-bold mb-4">Redes Sociais</h3>
+            <div className="flex space-x-3">
+              <a 
+                href="https://www.instagram.com/instituto_escafandristas/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"
+                aria-label="Instagram do Instituto Escafandristas"
+              >
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+              <a 
+                href="https://www.linkedin.com/company/instituto-escafandristas/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"
+                aria-label="LinkedIn do Instituto Escafandristas"
+              >
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
             </div>
-          </div>
-          
-          <div>
-            <h3 className="text-xl font-bold mb-4">Serviços</h3>
-            <ul className="space-y-2 text-gray-400">
-              <li><a href="#serviços" className="hover:text-white transition-colors">Contabilidade</a></li>
-              <li><a href="#serviços" className="hover:text-white transition-colors">Fiscal</a></li>
-              <li><a href="#serviços" className="hover:text-white transition-colors">Departamento Pessoal</a></li>
-              <li><a href="#serviços" className="hover:text-white transition-colors">Abertura de Empresa</a></li>
-              <li><a href="#serviços" className="hover:text-white transition-colors">Consultoria Empresarial</a></li>
-              <li><a href="#serviços" className="hover:text-white transition-colors">Planejamento Tributário</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-xl font-bold mb-4">Links Úteis</h3>
-            <ul className="space-y-2 text-gray-400">
-              <li>
-                <a href="#" className="hover:text-white transition-colors flex items-center">
-                  <Calendar className="h-4 w-4 mr-2" />
-                  Agenda Tributária
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors flex items-center">
-                  <FileText className="h-4 w-4 mr-2" />
-                  Tabelas Práticas
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors flex items-center">
-                  <Calculator className="h-4 w-4 mr-2" />
-                  Calculadoras
-                </a>
-              </li>
-              <li><a href="#" className="hover:text-white transition-colors">Receita Federal</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Previdência Social</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">FGTS</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-xl font-bold mb-4">Contato</h3>
-            <ul className="space-y-2 text-gray-400">
-              <li className="flex items-start">
-                <div className="w-5 h-5 mt-1 mr-3 rounded-full bg-gray-800 flex items-center justify-center flex-shrink-0">
-                  <Phone className="h-3 w-3" />
-                </div>
-                <div>
-                  <p>(11) 5555-5555</p>
-                  <p>(11) 98765-4321</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <div className="w-5 h-5 mt-1 mr-3 rounded-full bg-gray-800 flex items-center justify-center flex-shrink-0">
-                  <Mail className="h-3 w-3" />
-                </div>
-                <div>
-                  <p>contato@contabilify.com.br</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <div className="w-5 h-5 mt-1 mr-3 rounded-full bg-gray-800 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="h-3 w-3" />
-                </div>
-                <div>
-                  <p>Av. Paulista, 1000 - Bela Vista</p>
-                  <p>São Paulo - SP, 01310-000</p>
-                </div>
-              </li>
-            </ul>
+            
+            <h3 className="text-lg font-bold mt-6 mb-2">Contato</h3>
+            <p className="text-gray-400">presidencia@escafandristas.org</p>
+            <p className="text-gray-400">(11) 96558-3397</p>
           </div>
         </div>
         
-        <div className="border-t border-gray-800 mt-12 pt-8 text-gray-400 text-sm text-center">
-          <p>&copy; {currentYear} Contabilify. Todos os direitos reservados.</p>
+        <div className="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500 text-sm">
+          <p>&copy; {currentYear} Instituto Escafandristas. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

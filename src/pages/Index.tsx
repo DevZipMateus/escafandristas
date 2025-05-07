@@ -1,17 +1,16 @@
 
 import { useEffect } from 'react';
 import Header from '@/components/Header';
-import HeroSection from '@/components/HeroSection';
-import AboutSection from '@/components/AboutSection';
-import ServicesSection from '@/components/ServicesSection';
-import PlansSection from '@/components/PlansSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
-import ContactSection from '@/components/ContactSection';
+import Hero from '@/components/Hero';
+import About from '@/components/About';
+import WhatWeDo from '@/components/WhatWeDo';
+import HowWeDo from '@/components/HowWeDo';
+import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
 const Index = () => {
   useEffect(() => {
-    // Smooth scroll implementation with reduced offset for tighter sections
+    // Implementação do smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -23,7 +22,7 @@ const Index = () => {
         if (!targetElement) return;
 
         window.scrollTo({
-          top: targetElement.offsetTop - 70, // Reduced offset for tighter layout
+          top: targetElement.offsetTop - 70,
           behavior: 'smooth'
         });
       });
@@ -43,12 +42,11 @@ const Index = () => {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow">
-        <HeroSection />
-        <AboutSection />
-        <ServicesSection />
-        <PlansSection />
-        <TestimonialsSection />
-        <ContactSection />
+        <Hero />
+        <About />
+        <WhatWeDo />
+        <HowWeDo />
+        <Contact />
       </main>
       <Footer />
     </div>

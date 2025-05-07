@@ -1,5 +1,5 @@
 
-import { Phone, Mail, MapPin, Instagram, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, Linkedin, Youtube } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -64,6 +64,15 @@ const Contact = () => {
                   aria-label="LinkedIn do Instituto Escafandristas"
                 >
                   <Linkedin className="h-6 w-6 text-primary" />
+                </a>
+                <a 
+                  href="https://www.youtube.com/@institutoescafandristas191/featured" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
+                  aria-label="Canal do YouTube do Instituto Escafandristas"
+                >
+                  <Youtube className="h-6 w-6 text-primary" />
                 </a>
               </div>
             </div>

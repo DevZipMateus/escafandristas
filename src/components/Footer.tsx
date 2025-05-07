@@ -1,5 +1,5 @@
 
-import { Instagram, Linkedin } from 'lucide-react';
+import { Instagram, Linkedin, Youtube } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -69,6 +69,15 @@ const Footer = () => {
                 aria-label="LinkedIn do Instituto Escafandristas"
               >
                 <Linkedin className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://www.youtube.com/@institutoescafandristas191/featured" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"
+                aria-label="Canal do YouTube do Instituto Escafandristas"
+              >
+                <Youtube className="h-5 w-5" />
               </a>
             </div>
             

@@ -1,8 +1,10 @@
 
-import { Instagram } from 'lucide-react';
+import { Instagram, Youtube } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { Button } from '@/components/ui/button';
 
 const GrupoEstudos = () => {
   return (
@@ -35,36 +37,84 @@ const GrupoEstudos = () => {
             {/* Mergulhos */}
             <div>
               <h2 className="section-title">Alguns de nossos mergulhos</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-                <Card className="overflow-hidden border-primary/10 hover:shadow-md transition-shadow">
-                  <CardContent className="p-6 space-y-4">
-                    <h3 className="text-xl font-serif font-bold text-primary-dark">Princípios de Economia Política</h3>
-                    <p className="text-gray-500 italic">(Carl Menger)</p>
-                    <p className="text-gray-700">
-                      A magnum opus do fundador da escola austríaca de economia, onde se encontram as origens de diversos conceitos fundamentais a esta tradição de pensamento, como a preferência temporal, o marginalismo, valor, bens, e tantos outros.
-                    </p>
-                  </CardContent>
-                </Card>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
+                {/* Princípios de Economia Política */}
+                <div className="col-span-1">
+                  <Card className="overflow-hidden border-primary/10 hover:shadow-md transition-shadow h-full">
+                    <CardContent className="p-6 space-y-4">
+                      <h3 className="text-xl font-serif font-bold text-primary-dark">Princípios de Economia Política</h3>
+                      <p className="text-gray-500 italic">(Carl Menger)</p>
+                      <p className="text-gray-700">
+                        A magnum opus do fundador da escola austríaca de economia, onde se encontram as origens de diversos conceitos fundamentais a esta tradição de pensamento, como a preferência temporal, o marginalismo, valor, bens, e tantos outros.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+                <div className="col-span-2">
+                  <div className="rounded-md overflow-hidden">
+                    <AspectRatio ratio={16/9}>
+                      <iframe 
+                        src="https://www.youtube.com/embed/ibVCSGTs_YU" 
+                        title="Princípios de Economia Política - Instituto Escafandristas"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowFullScreen
+                        className="w-full h-full"
+                      ></iframe>
+                    </AspectRatio>
+                  </div>
+                </div>
                 
-                <Card className="overflow-hidden border-primary/10 hover:shadow-md transition-shadow">
-                  <CardContent className="p-6 space-y-4">
-                    <h3 className="text-xl font-serif font-bold text-primary-dark">Fundamentação da Metafísica dos Costumes</h3>
-                    <p className="text-gray-500 italic">(Immanuel Kant)</p>
-                    <p className="text-gray-700">
-                      Considerado o filósofo que simboliza o apogeu da idade moderna, nesta obra Kant delimita a sua perspectiva acerca dos fundamentos para a ação humana orientada a partir do dever-ser. Um livro indispensável aos amantes da Filosofia.
-                    </p>
-                  </CardContent>
-                </Card>
+                {/* Fundamentação da Metafísica dos Costumes */}
+                <div className="col-span-1">
+                  <Card className="overflow-hidden border-primary/10 hover:shadow-md transition-shadow h-full">
+                    <CardContent className="p-6 space-y-4">
+                      <h3 className="text-xl font-serif font-bold text-primary-dark">Fundamentação da Metafísica dos Costumes</h3>
+                      <p className="text-gray-500 italic">(Immanuel Kant)</p>
+                      <p className="text-gray-700">
+                        Considerado o filósofo que simboliza o apogeu da idade moderna, nesta obra Kant delimita a sua perspectiva acerca dos fundamentos para a ação humana orientada a partir do dever-ser. Um livro indispensável aos amantes da Filosofia.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+                <div className="col-span-2">
+                  <div className="rounded-md overflow-hidden">
+                    <AspectRatio ratio={16/9}>
+                      <iframe 
+                        src="https://www.youtube.com/embed/2tbNIcSF2us" 
+                        title="Fundamentação da Metafísica dos Costumes - Instituto Escafandristas"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowFullScreen
+                        className="w-full h-full"
+                      ></iframe>
+                    </AspectRatio>
+                  </div>
+                </div>
                 
-                <Card className="overflow-hidden border-primary/10 hover:shadow-md transition-shadow">
-                  <CardContent className="p-6 space-y-4">
-                    <h3 className="text-xl font-serif font-bold text-primary-dark">Objetivismo: Introdução à epistemologia e teoria dos conceitos</h3>
-                    <p className="text-gray-500 italic">(Ayn Rand)</p>
-                    <p className="text-gray-700">
-                      Autora de um do segundo livro mais influente da história dos Estados Unidos, Ayn Rand e seu pensamento são símbolos de capitalismo e individualismo. Nesta obra, a autora aborda a teoria do conhecimento que sustenta suas teses.
-                    </p>
-                  </CardContent>
-                </Card>
+                {/* Objetivismo */}
+                <div className="col-span-1">
+                  <Card className="overflow-hidden border-primary/10 hover:shadow-md transition-shadow h-full">
+                    <CardContent className="p-6 space-y-4">
+                      <h3 className="text-xl font-serif font-bold text-primary-dark">Objetivismo: Introdução à epistemologia e teoria dos conceitos</h3>
+                      <p className="text-gray-500 italic">(Ayn Rand)</p>
+                      <p className="text-gray-700">
+                        Autora de um do segundo livro mais influente da história dos Estados Unidos, Ayn Rand e seu pensamento são símbolos de capitalismo e individualismo. Nesta obra, a autora aborda a teoria do conhecimento que sustenta suas teses.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+                <div className="col-span-2">
+                  <div className="rounded-md overflow-hidden">
+                    <AspectRatio ratio={16/9}>
+                      <iframe 
+                        src="https://www.youtube.com/embed/yNvrRemsULw" 
+                        title="Objetivismo: Introdução à epistemologia e teoria dos conceitos - Instituto Escafandristas"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowFullScreen
+                        className="w-full h-full"
+                      ></iframe>
+                    </AspectRatio>
+                  </div>
+                </div>
               </div>
             </div>
             
@@ -72,15 +122,37 @@ const GrupoEstudos = () => {
             <div className="bg-primary/5 p-8 rounded-lg text-center max-w-2xl mx-auto">
               <h3 className="text-xl font-serif font-bold mb-4">Participe do nosso grupo de estudos</h3>
               <p className="mb-6">Para se juntar ao nosso grupo de estudos, envie uma mensagem direta para o nosso Instagram!</p>
-              <a 
-                href="https://www.instagram.com/instituto_escafandristas/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 btn-primary"
-              >
-                <Instagram className="h-5 w-5" />
-                Contate-nos no Instagram
-              </a>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <Button 
+                  asChild
+                  className="inline-flex items-center gap-2"
+                  variant="default"
+                >
+                  <a 
+                    href="https://www.instagram.com/instituto_escafandristas/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <Instagram className="h-5 w-5" />
+                    Contate-nos no Instagram
+                  </a>
+                </Button>
+                
+                <Button 
+                  asChild
+                  className="inline-flex items-center gap-2"
+                  variant="outline"
+                >
+                  <a 
+                    href="https://www.youtube.com/@institutoescafandristas191/featured" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <Youtube className="h-5 w-5" />
+                    Inscreva-se no YouTube
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </section>

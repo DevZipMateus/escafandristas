@@ -5,7 +5,6 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif text-gray-900 leading-tight">
-              Ouse saber.
               <span className="block text-primary italic mt-2">Ouse saber</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-700 max-w-xl">
